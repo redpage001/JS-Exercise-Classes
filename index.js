@@ -148,13 +148,11 @@ class Instructor extends Lambdasian{
     return `${student.name} recieves a perfect score on ${subject}`;
   }
   changeGrade(student){
-    let random = Math.floor(Math.random()*200) - 100;
-    if (student.grade < 0){
-      student.grade = 0;
-    } else if (student.grade > 100){
-      student.grade = 100;
+    let randomNumber = Math.floor(Math.random() * 50) + 1;
+    if (student.grade < randomNumber){
+      student.grade = student.grade + randomNumber;
     } else {
-      student.grade = student.grade + random;
+      student.grade = student.grade - randomNumber;
     }
   }
 }
